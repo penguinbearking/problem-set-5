@@ -184,7 +184,7 @@ function credit() {
     cardnum = Number(card);
     if (Number.isInteger(Number(card))){
       //if (card.length == 16 || card.length == 15 || card.length == 13) {
-        console.log("1length")
+        //console.log("1length")
         break;
       //}
     }
@@ -200,31 +200,31 @@ function credit() {
     }
     evennums = evennums + tempint;
     //evennums = evennums + Number(card[i])*2;
-    console.log("2evan " + evennums + " " + temp + " " + tempint);
+    //console.log("2evan " + evennums + " " + temp + " " + tempint);
   }
   for(let j=card.length - 1; j>=0; j-=2) {
     oddnums = oddnums + Number(card[j]);
-    console.log("2odd " + oddnums + " " + Number(card[j]));
+    //console.log("2odd " + oddnums + " " + Number(card[j]));
   }
 
   if(((evennums + oddnums)%10 == 0) && 
     (card.length == 13 || card.length == 16) && (card[0] == 4)) {
     document.getElementById("credit-output").innerHTML="<img src='./images/visa.png'>";
-    console.log("visa");
+    //console.log("visa");
   }
   else if(((evennums + oddnums)%10 == 0) && (card.length == 15) && 
     (card[0] == 3 && (card[1] == 4 || card[1] == 7))) {
     document.getElementById("credit-output").innerHTML="<img src='./images/amex.png'>";
-    console.log("amex");
+    //console.log("amex");
   }
   else if(((evennums + oddnums)%10 == 0) && (card.length == 16) && 
     (card[0] == 5 && (card[1] == 1 || card[1] == 2 || card[1] == 3 || card[1] == 4 || card[1] == 5))) {
     document.getElementById("credit-output").innerHTML="<img src='./images/mastercard.png'>";
-    console.log("master");
+    //console.log("master");
   }
   else {
     document.getElementById("credit-output").innerHTML="<img src='./images/invalid.png'>";
-    console.log("inv");
+    //console.log("inv");
   }
 
   card = cardnum;
@@ -266,7 +266,7 @@ function guess() {
   let usrnum;
   while(found == false) {
     usrnum = Number(prompt("Input Your Guess For An Integer Between 1 And 1000"));
-    if (usrnum <= 1000 && usrnum >= 1) {
+    if (usrnum <= 1000 && usrnum >= 1 && Number.isInteger(usrnum)) {
       if(usrnum > randnum) {
         alert("This guess was too high")
         attempts+=1;
