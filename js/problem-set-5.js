@@ -223,7 +223,8 @@ function credit() {
     //console.log("master");
   }
   else {
-    document.getElementById("credit-output").innerHTML="<img src='./images/invalid.png'>";
+    document.getElementById("credit-output").innerHTML="Invalid.";
+    //document.getElementById("credit-output").innerHTML="<img src='./images/invalid.png'>";
     //console.log("inv");
   }
 
